@@ -43,7 +43,21 @@ canvas {
   font-weight: bold;
 }
 
-.main {
+
+.main-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.game-board {
+  flex: 1;
+}
+
+#leaderboard {
+  flex: 0 0 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
 }

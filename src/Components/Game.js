@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Leaderboard from './Leaderboard';
 import '../App.css';
 
 const cellSize = 20;
@@ -124,10 +125,13 @@ const Game = () => {
     }, [snake, food]);
 
     return (
-        <div className="game-container">
-            <canvas ref={canvasRef} width={canvasSize} height={canvasSize} />
-            <div id="scoreBoard">Score: {score}</div>
-            {isGameOver && <div id="gameOver">Game Over! Press Enter to Restart</div>}
+        <div className="main-container">
+            <div className="game-board">
+                <canvas ref={canvasRef} width={canvasSize} height={canvasSize} />
+                <div id="scoreBoard">Score: {score}</div>
+                {isGameOver && <div id="gameOver">Game Over! Press Enter to Restart</div>}
+            </div>
+            <Leaderboard highScore={highScore} />
         </div>
     );
 };
