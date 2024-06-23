@@ -1,5 +1,3 @@
-// src/Game.js
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import '../App.css';
 
@@ -28,6 +26,7 @@ const Game = () => {
 
     const handleKeyPress = useCallback((event) => {
         if (isGameOver && event.key === 'Enter') {
+            saveHighScore(score);
             restartGame();
             return;
         }
@@ -49,7 +48,7 @@ const Game = () => {
                     break;
             }
         }
-    }, [direction, isGameOver]);
+    }, [direction, isGameOver, score]);
 
     useEffect(() => {
         document.addEventListener('keydown', handleKeyPress);

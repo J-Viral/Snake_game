@@ -1,10 +1,7 @@
-// src/Leaderboard.js
-
 import React, { useEffect, useState } from 'react';
 
 const Leaderboard = () => {
     const [highScore, setHighScore] = useState(0);
-    
 
     useEffect(() => {
         const storedHighScore = JSON.parse(localStorage.getItem('highScore'));
